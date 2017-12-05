@@ -1,0 +1,13 @@
+run.config:
+  engine: python
+  engine.config:
+    runtime: python-3.6
+  extra_packages:
+  - libjpeg-turbo
+  - tiff
+  - zlib
+  - freetype2
+  - lcms2
+  - libwebp
+  - tcl
+  - tk

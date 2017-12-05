@@ -25,12 +25,16 @@ SECRET_KEY = 'j)gmlq-^zf8$97vo)ote9$@w$896tabv)b5znh-qa6#^rtqg_n'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+    'django.local'
+]
 
 
 # Application definition
 
 INSTALLED_APPS = [
+    'art.apps.ArtConfig',
+    'events.apps.EventsConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -105,7 +109,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'en-us'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'EST'
 
 USE_I18N = True
 
