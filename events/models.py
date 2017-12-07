@@ -18,8 +18,11 @@ class CurrentShow(models.Model):
 
 class PreviousVenue(models.Model):
     # created_by = models.ForeignKey('auth.User')
-    venue_name = models.CharField(max_length=255)
+    venue_name = models.CharField(max_length=255, unique=True)
     created_date = models.DateTimeField(auto_now_add=True)
     
+    class Meta(object):
+        ordering = ['venue_name']
+
     def __str__(self):
         return self.venue_name

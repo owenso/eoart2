@@ -26,13 +26,16 @@ SECRET_KEY = 'j)gmlq-^zf8$97vo)ote9$@w$896tabv)b5znh-qa6#^rtqg_n'
 DEBUG = True
 
 ALLOWED_HOSTS = [
-    'django.local'
+    'django.local',
+    'localhost',
+    '172.21.0.2'
 ]
 
 
 # Application definition
 
 INSTALLED_APPS = [
+    'adminsortable2',
     'art.apps.ArtConfig',
     'events.apps.EventsConfig',
     'django.contrib.admin',
