@@ -2,20 +2,7 @@ from django.db import models
 
 # Create your models here.
 
-# ARTWORK_TYPES = (
-#     ('ac', 'Acrylic'),
-#     ('ph', 'Photograph'),
-#     ('wc', 'Watercolor')
-# )
-
-
-# class Category(models.Model):
-#     name = models.CharField(max_length=50)
-#     desc = models.TextField()
-
 class Artwork(models.Model):
-    # category = models.ManyToManyField(Category)
-    # artwork_type = models.CharField(choices=ARTWORK_TYPES, max_length=5)
     created_date = models.DateTimeField(auto_now_add=True)
     name = models.CharField(max_length=255)
     size = models.CharField(max_length=50, blank=True)
