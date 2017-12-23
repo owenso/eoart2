@@ -3,5 +3,5 @@ from django.views.generic import TemplateView  # Import TemplateView
 
 # Create your views here.
 
-class ArtPageView(TemplateView):
-    template_name = "art.html"
+class AboutPageView(TemplateView):
+    template_name = "about.html"

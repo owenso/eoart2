@@ -38,6 +38,8 @@ INSTALLED_APPS = [
     'adminsortable2',
     'art.apps.ArtConfig',
     'events.apps.EventsConfig',
+    'contact.apps.ContactConfig',
+    'about.apps.AboutConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',

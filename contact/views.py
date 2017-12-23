@@ -3,5 +3,6 @@ from django.views.generic import TemplateView  # Import TemplateView
 
 # Create your views here.
 
-class ArtPageView(TemplateView):
-    template_name = "art.html"
+
+class ContactPageView(TemplateView):
+    template_name = "contact.html"
