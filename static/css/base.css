@@ -2,3 +2,8 @@ html,
 body {
     height:100%;
 }
+
+.nav-active{
+    color:purple;
+    text-decoration: underline;
+}

@@ -20,12 +20,12 @@
             <a href="/">Art By EssieO</a>
         </h1>
     </div>
-    <div id="navbar navbar-{% block content %} {% endblock %}">
+    <div id="navbar">
         <ul>
-            <li><a href="{% url 'art' %}">Home</a></li>
-            <li><a href="{% url 'about' %}">About</a></li>
-            <li><a href="{% url 'events' %}">Events</a></li>
-            <li><a href="{% url 'contact' %}">Contact</a></li>
+            <li><a class="{% block artActive %} {% endblock %}" href="{% url 'art' %}">Home</a></li>
+            <li><a class="{% block aboutActive %} {% endblock %}" href="{% url 'about' %}">About</a></li>
+            <li><a class="{% block eventActive %} {% endblock %}" href="{% url 'events' %}">Events</a></li>
+            <li><a class="{% block contactActive %} {% endblock %}" href="{% url 'contact' %}">Contact</a></li>
         </ul>
     </div>
     <div class="container">
