@@ -1,8 +1,10 @@
 from django.shortcuts import render
-from django.views.generic import TemplateView  # Import TemplateView
+from .models import CurrentShow
+from .models import PreviousVenue
 
 # Create your views here.
 
-
-class EventPageView(TemplateView):
-    template_name = "events.html"
+def eventsView(request):
+    current_shows = CurrentShow.objects.order_by('end_date')
+    previous_venues = PreviousVenue.objects.order_by('venue_name')
+    return render(request, 'events.html', {'currentShows' : current_shows, 'previousVenues': previous_venues})

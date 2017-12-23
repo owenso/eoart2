@@ -8,8 +8,10 @@ class CurrentShow(models.Model):
     address = models.CharField(max_length=255, blank=True)
     venue_name = models.CharField(max_length=255)
     created_date = models.DateTimeField(auto_now_add=True)
-    startDate = models.DateTimeField(blank=True, null=True)
-    endDate = models.DateTimeField(blank=True, null=True)
+    start_date = models.DateField(blank=True, null=True)
+    start_time = models.TimeField(blank=True, null=True)
+    end_date = models.DateField(blank=True, null=True)
+    end_time = models.TimeField(blank=True, null=True)
     url = models.URLField(blank=True, null=True)
     show_image = models.ImageField(upload_to='shows/', blank=True, null=True)
 
