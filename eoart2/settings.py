@@ -36,6 +36,7 @@ ALLOWED_HOSTS = [
 
 INSTALLED_APPS = [
     'adminsortable2',
+    'email_obfuscator',
     'art.apps.ArtConfig',
     'events.apps.EventsConfig',
     'contact.apps.ContactConfig',
@@ -133,10 +134,13 @@ STATICFILES_DIRS = (
 )
 
 
-MEDIA_URL = '/images/'
+MEDIA_URL = 'images/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'images')
 
 
 EMAIL_BACKEND = "sendgrid_backend.SendgridBackend"
 SENDGRID_API_KEY = os.environ["SENDGRID_API_KEY"]
 SENDGRID_SANDBOX_MODE_IN_DEBUG = False
+
+
+APPEND_SLASH = True

@@ -1,4 +1,5 @@
 {% extends 'base.html' %}
+{% load email_obfuscator %}
 {% block contactActive %}nav-active{% endblock %}
 
 <!DOCTYPE html>
@@ -11,12 +12,17 @@
 
 <body>
     {% block pagecontent %}
-    <h2>Contact</h2>
-    <form method="post">
-        {% csrf_token %} {{ form.as_p }}
-        <div class="form-actions">
-            <button type="submit">Send</button>
-        </div>
-    </form>
+    <div class="well well-lg transparent-well clearfix">
+        <h2>Contact</h2>
+        <br>
+        <p>All items are for sale. Bids and/or questions can be sent to {{'essieo@gmail.com'|obfuscate_mailto}}, or sent via the contact form below.</p>
+        <br>
+        <form method="post">
+            {% csrf_token %} {{ form.as_p }}
+            <div class="form-actions">
+                <button class="btn btn-oldstyle col-sm-12" type="submit">Send</button>
+            </div>
+        </form>
+    </div>
     {% endblock %}
 </body>

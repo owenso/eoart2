@@ -1,5 +1,4 @@
-{% extends 'base.html' %}
-{% block artActive %}nav-active{% endblock %}
+{% extends 'base.html' %} {% block artActive %}nav-active{% endblock %}
 
 <!DOCTYPE html>
 <html lang="en">
@@ -10,12 +9,34 @@
 </head>
 
 <body>
-    {% block pagecontent %}
-    <h2>Art</h2>
-    <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna
-        aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-        Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur
-        sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
-    </p>
-    {% endblock %}
+    {% block pagecontent %} {% if acrylics %}
+    <div>
+        <h4>Acrylics</h4>
+        {% for acrylic in acrylics %}
+        <a href="{{acrylic.image.url}}" data-lightbox="acrylics" data-title="<p>{{acrylic.name}} {{acrylic.size}}</p> <p>{{acrylic.description}}</p>">
+            <img src="{{acrylic.image.url}}" class="img-thumbnail art-thumbnail" alt="">
+        </a>
+        {% endfor %}
+    </div>
+    {% endif %} {% if watercolors %}
+
+    <div>
+        <h4>Watercolors</h4>
+        {% for watercolor in watercolors %}
+        <a href="{{watercolor.image.url}}" data-lightbox="watercolors" data-title="{{watercolor.name}}">
+            <img src="{{watercolor.image.url}}" class="img-thumbnail art-thumbnail" alt="">
+        </a>
+        {% endfor %}
+    </div>
+    {% endif %} {% if photos %}
+
+    <div>
+        <h4>Photography</h4>
+        {% for photo in photos %}
+        <a href="{{photo.image.url}}" data-lightbox="photos" data-title="{{photo.name}}">
+            <img src="{{photo.image.url}}" class="img-thumbnail art-thumbnail" alt="">
+        </a>
+        {% endfor %}
+    </div>
+    {% endif %} {% endblock %}
 </body>

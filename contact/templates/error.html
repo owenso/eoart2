@@ -1,0 +1,20 @@
+{% extends 'base.html' %} {% block contactActive %}nav-active{% endblock %}
+{% load email_obfuscator %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}Message Error{% endblock %}</title>
+</head>
+
+<body>
+    {% block pagecontent %}
+    <h2>Sorry, there was an error sending your message.</h2>
+    <p>Please email your message to {{'essieo@gmail.com'|obfuscate_mailto}}. And please mention the contact form isnt working so I can yell at my son!</p>
+    <h4>
+        <a href="{% url 'art' %}">Return Home</a>
+    </h4>
+    {% endblock %}
+</body>

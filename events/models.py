@@ -15,6 +15,9 @@ class CurrentShow(models.Model):
     url = models.URLField(blank=True, null=True)
     show_image = models.ImageField(upload_to='shows/', blank=True, null=True)
 
+    class Meta(object):
+        verbose_name_plural = "Current Shows"
+
     def __str__(self):
         return self.venue_name
 
@@ -25,6 +28,7 @@ class PreviousVenue(models.Model):
     
     class Meta(object):
         ordering = ['venue_name']
+        verbose_name_plural = "Previous Venues"
 
     def __str__(self):
         return self.venue_name

@@ -11,34 +11,42 @@
     <!-- Optional theme -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp"
         crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static 'css/lightbox.min.css' %}">
     <link rel="stylesheet" href="{% static 'css/base.css' %}">
+    <link href="https://fonts.googleapis.com/css?family=Alegreya+Sans|Ubuntu" rel="stylesheet">
 </head>
 
-<body>
-    <div class="page-header">
-        <h1>
-            <a href="/">Art By EssieO</a>
-        </h1>
-    </div>
-    <div id="navbar">
-        <ul>
-            <li><a class="{% block artActive %} {% endblock %}" href="{% url 'art' %}">Home</a></li>
-            <li><a class="{% block aboutActive %} {% endblock %}" href="{% url 'about' %}">About</a></li>
-            <li><a class="{% block eventActive %} {% endblock %}" href="{% url 'events' %}">Events</a></li>
-            <li><a class="{% block contactActive %} {% endblock %}" href="{% url 'contact' %}">Contact</a></li>
-        </ul>
-    </div>
-    <div class="container">
-        <div class="row">
-            <div class="col-md-8">
-                {% block pagecontent %} {% endblock %}
-            </div>
+<body class="">
+    <div id="sidebar" class="col-sm-2 text-center">
+        <div id='page-header' class="text-left">
+                <a href="/"><h1>Art By<br>EssieO</h1></a>
         </div>
+        <hr class='sidebar-divider'>
+        <div id="navbar" class='text-left'>
+            <ul>
+                <li>
+                    <a class="{% block artActive %} {% endblock %}" href="{% url 'art' %}"><h3>Home</h3></a>
+                </li>
+                <li>
+                    <a class="{% block aboutActive %} {% endblock %}" href="{% url 'about' %}"><h3>About</h3></a>
+                </li>
+                <li>
+                    <a class="{% block eventActive %} {% endblock %}" href="{% url 'events' %}"><h3>Events</h3></a>
+                </li>
+                <li>
+                    <a class="{% block contactActive %} {% endblock %}" href="{% url 'contact' %}"><h3>Contact</h3></a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div id="main-view" class="col-sm-10">
+        {% block pagecontent %} {% endblock %}
     </div>
 </body>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
     crossorigin="anonymous"></script>
+<script src="{% static 'js/lightbox.min.js' %}"></script>
 
 </html>

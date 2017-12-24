@@ -18,13 +18,14 @@ class Friends(models.Model):
         return self.name
 
 
-class Bio(models.Model):
-    description = models.TextField(blank=True)
-    my_order = models.PositiveIntegerField(default=0, blank=False, null=False)
+# https://goodcode.io/articles/django-singleton-models/
+class SingletonModel(models.Model):
+    class Meta:
+        abstract = True
 
     def save(self, *args, **kwargs):
         self.__class__.objects.exclude(id=self.id).delete()
-        super(Bio, self).save(*args, **kwargs)
+        super(SingletonModel, self).save(*args, **kwargs)
 
     @classmethod
     def load(cls):
@@ -33,6 +34,14 @@ class Bio(models.Model):
         except cls.DoesNotExist:
             return cls()
 
+
+class Bio(SingletonModel):
+    text = models.TextField(blank=True)
     class Meta(object):
-        ordering = ['my_order']
         verbose_name_plural = "bio"
+
+class SelfPhoto(SingletonModel):
+    image = models.ImageField(upload_to='me/', null=False)
+
+    class Meta(object):
+        verbose_name_plural = "Self Photo"

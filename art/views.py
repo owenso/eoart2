@@ -1,7 +1,13 @@
 from django.shortcuts import render
-from django.views.generic import TemplateView  # Import TemplateView
+from .models import Photograph
+from .models import Acrylic
+from .models import Watercolor
 
 # Create your views here.
 
-class ArtPageView(TemplateView):
-    template_name = "art.html"
+
+def artView(request):
+    watercolors = Watercolor.objects.order_by('my_order')
+    acrylics = Acrylic.objects.order_by('my_order')
+    photos = Photograph.objects.order_by('my_order')
+    return render(request, 'art.html', {'watercolors': watercolors, 'acrylics': acrylics, 'photos': photos})
