@@ -30,7 +30,9 @@ ALLOWED_HOSTS = [
     'django.local',
     'django.test',
     'localhost',
-    '172.21.0.2'
+    '172.21.0.2',
+    '45.32.223.136',
+    'artbyessieo.nanoapp.io'
 ]
 
 
