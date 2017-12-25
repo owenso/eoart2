@@ -11,3 +11,17 @@ run.config:
   - libwebp
   - tcl
   - tk
+  - nginx
+web.main:
+  start:
+    nginx: nginx -c /app/etc/nginx.conf
+    django: gunicorn -c /app/etc/gunicorn.py eoart2.wsgi
+# worker.main:
+  # start: 'python jobs-worker.py'
+deploy.config:
+  # collect static assets during deploy
+  # extra_steps:
+  #   - python manage.py collectstatic --noinput --clear
+  before_live:
+    web.main:
+      - python manage.py migrate --fake-initial

@@ -20,13 +20,15 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/1.11/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'j)gmlq-^zf8$97vo)ote9$@w$896tabv)b5znh-qa6#^rtqg_n'
+SECRET_KEY = os.environ["SECRET_KEY"]
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = True if os.environ["APP_NAME"] == "dev" else False
+print('Debug Enabled for DEV Environment.') if os.environ["APP_NAME"] == "dev" else print("Debug Disabled.")
 
 ALLOWED_HOSTS = [
     'django.local',
+    'django.test',
     'localhost',
     '172.21.0.2'
 ]
@@ -128,6 +130,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.11/howto/static-files/
 
 STATIC_URL = '/static/'
+# STATIC_ROOT = os.path.join(BASE_DIR, 'static/')
 
 STATICFILES_DIRS = (
     os.path.join(BASE_DIR, 'static'),
@@ -136,7 +139,6 @@ STATICFILES_DIRS = (
 
 MEDIA_URL = 'images/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'images')
-
 
 EMAIL_BACKEND = "sendgrid_backend.SendgridBackend"
 SENDGRID_API_KEY = os.environ["SENDGRID_API_KEY"]

@@ -12,10 +12,9 @@
 
 <body>
     {% block pagecontent %}
-    <div class="row">
-        <div class="display-table  events-content">
-            <div class="col-md-1 display-table-cell"></div>
-            <div class="col-md-4 transparent-well event-column display-table-cell">
+    <div class="">
+        <div class="">
+            <div class="transparent-well event-column">
                 <h3>Current Shows</h3>
                 {% if currentShows %}
                 <ul>
@@ -39,9 +38,7 @@
                 {% else %}
                 <p>No Current Shows at the moment. Please check back later!</p>
                 {% endif %}
-            </div>
-            <div class="col-md-1 display-table-cell"></div>
-            <div class="col-md-4 transparent-well event-column display-table-cell">
+                <hr style="border:1px solid lightgrey">
                 <h3>Previously participated in group art shows at the following locations:</h3>
                 <ul>
                     {% for previousVenue in previousVenues %}
@@ -49,7 +46,6 @@
                     {% endfor %}
                 </ul>
             </div>
-            <div class="col-md-1 display-table-cell"></div>
         </div>
     </div>
     {% endblock %}

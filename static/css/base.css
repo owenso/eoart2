@@ -7,6 +7,14 @@ font-family: 'Ubuntu', sans-serif;
     overflow:auto;
 }
 
+body{
+    background: #EDE574;
+    /* fallback for old browsers */
+    background: -webkit-linear-gradient(to bottom, #E1F5C4, #EDE574);
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to bottom, #E1F5C4, #EDE574);
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
 
 p{
     font-size: 1.25em;
@@ -23,6 +31,15 @@ p{
 body{
     display: table;
     width:100%;
+}
+
+#mobilebar {
+    display: none;
+    background: rgba(255, 255, 255, 0.8);
+}
+
+.navbar-nav{
+    background: rgba(225, 245, 196, .8);
 }
 
 #page-header{
@@ -62,12 +79,6 @@ body{
     display: table-cell;
     float: none;
     padding: 2em;
-    background: #EDE574;
-    /* fallback for old browsers */
-    background: -webkit-linear-gradient(to bottom, #E1F5C4, #EDE574);
-    /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(to bottom, #E1F5C4, #EDE574);
-    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 
 .transparent-well {
@@ -76,6 +87,7 @@ body{
 
 .display-table{
     display: table;
+    float:right;
 }
 
 .display-table-cell{
@@ -103,11 +115,6 @@ body{
 
 
 /* ART */
-/* .art-carousel-image img {
-    margin: 0 auto;
-    height: 500px;
-    max-height: 500px;
-} */
 .art-thumbnail {
     height: 250px;
     width: auto;
@@ -192,8 +199,35 @@ body{
 .event-column{
     border: 1px solid lightgrey;
     padding:1em 2em;
+    width:60%;
+    margin: 0 auto;
 }
 
 .events-content{
-    margin-top:10vh;
+    padding-top:1em 2em;
+}
+
+@media only screen and (max-width: 768px) {
+    .art-thumbnail {
+        height: 150px;
+        width: auto;
+    }
+    body {
+        padding-top: 50px;
+    }
+    #sidebar{
+        display: none;
+    }
+
+    #mobilebar{
+        display: block;
+    }
+    .navbar-brand{
+        font-size:20px;
+    }
+
+    .event-column {
+        width:100%;
+        margin:0;
+    }
 }
