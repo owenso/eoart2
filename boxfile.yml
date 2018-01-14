@@ -21,8 +21,10 @@ deploy.config:
   #
   before_live:
     web.main:
-      - chmod 777 /app/db.sqlite3
-      - chmod 777 /app/
+      - chmod 776 /app/db.sqlite3
+      - chmod 776 /app/
+      - sudo chgrp -R www-data /app/images
+      - chmod -R 776 /app/images
       - python manage.py migrate --fake-initial
 web.main:
   start:
