@@ -12,16 +12,19 @@ run.config:
   - tcl
   - tk
   - nginx
-web.main:
-  start:
-    nginx: nginx -c /app/etc/nginx.conf
-    django: gunicorn -c /app/etc/gunicorn.py eoart2.wsgi
 # worker.main:
   # start: 'python jobs-worker.py'
 deploy.config:
   # collect static assets during deploy
-  # extra_steps:
-  #   - python manage.py collectstatic --noinput --clear
+  transform:
+    - python manage.py collectstatic --noinput --clear
+  #
   before_live:
     web.main:
+      - chmod 777 /app/db.sqlite3
+      - chmod 777 /app/
       - python manage.py migrate --fake-initial
+web.main:
+  start:
+    nginx: nginx -c /app/etc/nginx.conf
+    django: gunicorn -c /app/etc/gunicorn.py eoart2.wsgi

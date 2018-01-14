@@ -31,6 +31,7 @@ ALLOWED_HOSTS = [
     'django.test',
     'localhost',
     '172.21.0.2',
+    '172.21.0.3',
     '45.32.223.136',
     'artbyessieo.nanoapp.io'
 ]
@@ -133,10 +134,10 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.11/howto/static-files/
 
 STATIC_URL = '/static/'
-# STATIC_ROOT = os.path.join(BASE_DIR, 'static/')
+STATIC_ROOT = os.path.join(BASE_DIR, 'static/')
 
 STATICFILES_DIRS = (
-    os.path.join(BASE_DIR, 'static'),
+    os.path.join(BASE_DIR, 'src'),
 )
 
 
@@ -149,3 +150,8 @@ SENDGRID_SANDBOX_MODE_IN_DEBUG = False
 
 
 APPEND_SLASH = True
+
+#
+ADMINS = (
+    ('Owens', 'owensobrien@gmail.com'),
+)
