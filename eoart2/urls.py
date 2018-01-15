@@ -19,10 +19,10 @@ from django.views.generic.base import TemplateView
 from django.views.generic import RedirectView
 
 urlpatterns = [
-    url(r'^events', include('events.urls')),
+    url(r'^events/', include('events.urls')),
     url(r'^admin/', admin.site.urls),
-    url(r'^contact', include('contact.urls')),
-    url(r'^about', include('about.urls')),
-    url(r'', include('art.urls')),
-    url(r'', TemplateView.as_view(template_name='base.html')),
+    url(r'^contact/', include('contact.urls')),
+    url(r'^about/', include('about.urls')),
+    url(r'^', include('art.urls')),
+    url(r'^', TemplateView.as_view(template_name='base.html')),
 ]

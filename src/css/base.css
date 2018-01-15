@@ -1,10 +1,12 @@
-html,
-body,
-#sidebar {
+html, body{
 /* font-family: 'Alegreya Sans', sans-serif; */
-font-family: 'Ubuntu', sans-serif;
+    font-family: 'Ubuntu', sans-serif;
     height:100%;
-    overflow:auto;
+    /* overflow:auto; */
+}
+
+#sidebar{
+    height:100%;
 }
 
 body{
@@ -14,6 +16,8 @@ body{
     /* Chrome 10-25, Safari 5.1-6 */
     background: linear-gradient(to bottom, #E1F5C4, #EDE574);
     /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    display: table;
+    width:100%;
 }
 
 p{
@@ -26,11 +30,6 @@ p{
 
 .nav-active{
     color:C7AA74;
-}
-
-body{
-    display: table;
-    width:100%;
 }
 
 #mobilebar {
@@ -50,9 +49,11 @@ body{
 }
 #sidebar{
     background-color: white;
-    display: table-cell;
-    float: none;
+    /* display: table-cell; */
+    display:inline-block;
+    /* float: none; */
     padding:1em 3em;
+    height:100%;
     border-right: #603140 1px solid;
 }
 
@@ -76,13 +77,17 @@ body{
 
 
 #main-view{
-    display: table-cell;
-    float: none;
+    /* display: table-cell; */
+    display:inline-block;
+    /* float: none; */
+    height:100%;
     padding: 2em;
+    overflow:auto;
 }
 
 .transparent-well {
     background: rgba(245, 245, 245, 0.2);
+    padding:1em 2em;
 }
 
 .display-table{
@@ -113,7 +118,9 @@ body{
     max-height: 500px;
 }
 
-
+.eo-friends{
+    margin-top:2em;
+}
 /* ART */
 .art-thumbnail {
     height: 250px;

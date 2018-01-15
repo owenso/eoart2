@@ -12,8 +12,8 @@
 <body>
     {% block pagecontent %}
     <div class="">
-        <div class="">
-            <div class="transparent-well clearfix pull-right">
+        <div class="clearfix">
+            <div class="transparent-well pull-right">
                 <div class="col-sm-6">
                     <div class="">
                     <h2>About The Artist</h2>
@@ -25,10 +25,9 @@
                 </div>
             </div>
         </div>
-        <br>
-        <div class="">
-            <h2>EssieO's Friends</h2>
-            <div id="myCarousel" class="carousel slide">
+        <div class="eo-friends transparent-well">
+            <h2>Friends of EssieO</h2>
+            <div id="myCarousel" class="carousel slide ">
                 <!-- Indicators -->
                 <ol class="carousel-indicators">
                     {% for friend in friends %}
