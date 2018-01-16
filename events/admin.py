@@ -14,4 +14,4 @@ class CurrentShowAdmin(admin.ModelAdmin):
 
 @admin.register(PreviousVenue)
 class PreviousVenueAdmin(admin.ModelAdmin):
-    pass
+    list_display = ('venue_name', 'city', 'state')

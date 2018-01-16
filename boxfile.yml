@@ -16,6 +16,8 @@ run.config:
   # start: 'python jobs-worker.py'
 data.db:
   image: nanobox/postgresql:9.5
+data.storage:
+  image: nanobox/unfs:0.9
 deploy.config:
   # collect static assets during deploy
   transform:
@@ -23,12 +25,13 @@ deploy.config:
   #
   before_live:
     web.main:
-      - chmod 776 /app/db.sqlite3
-      - chmod 776 /app/
-      - sudo chgrp -R www-data /app/images
-      - chmod -R 776 /app/images
       - python manage.py migrate --fake-initial
 web.main:
   start:
     nginx: nginx -c /app/etc/nginx.conf
     django: gunicorn -c /app/etc/gunicorn.py eoart2.wsgi
+  network_dirs:           #| Network Dirs Config
+    data.storage:         #| Storage Component Designation
+      - images/
+data.storage:             #| Storage Component
+  image: nanobox/unfs:0.9 #|

@@ -42,7 +42,7 @@
                 <h3>Previously participated in group art shows at the following locations:</h3>
                 <ul>
                     {% for previousVenue in previousVenues %}
-                    <li>{{ previousVenue.venue_name }}</li> 
+                    <li>{{ previousVenue.venue_name }} - {{ previousVenue.city }}, {{ previousVenue.state }}</li> 
                     {% endfor %}
                 </ul>
             </div>
