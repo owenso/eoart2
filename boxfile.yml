@@ -22,7 +22,6 @@ deploy.config:
   # collect static assets during deploy
   transform:
     - python manage.py collectstatic --noinput --clear
-  #
   before_live:
     web.main:
       - python manage.py migrate --fake-initial
