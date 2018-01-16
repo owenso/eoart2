@@ -1,6 +1,6 @@
 html, body{
 /* font-family: 'Alegreya Sans', sans-serif; */
-    font-family: 'Ubuntu', sans-serif;
+    /* font-family: 'Ubuntu', sans-serif; */
     height:100%;
     /* overflow:auto; */
 }
@@ -45,21 +45,48 @@ p{
     display: inline-block;
 }
 .sidebar-divider{
-    border: 1px solid #957964;
+    border-bottom: 1px solid #957964;
 }
 #sidebar{
     background-color: white;
     /* display: table-cell; */
     display:inline-block;
     /* float: none; */
-    padding:1em 3em;
+    padding:1em 0;
     height:100%;
     border-right: #603140 1px solid;
+}
+
+#sidebar-content{
+    padding: 1em 3em;
 }
 
 #sidebar h3{
     margin-bottom: 20px;
 }
+
+#brand{
+    font-family: 'Original Surfer',
+    cursive;
+    padding: 2em 0;
+}
+
+
+#brand h1 {
+    margin: 0;
+    font-size: 4em;
+}
+
+#art-brand{
+    font-size: 5em;
+}
+ #brand h2{
+     margin:0px;
+ }
+
+ #sidebar a:hover{
+     text-decoration: none;
+ }
 
 #sidebar a, h3,h4,h2,h1{
     color:#603140;
@@ -88,6 +115,7 @@ p{
 .transparent-well {
     background: rgba(245, 245, 245, 0.2);
     padding:1em 2em;
+    border: 1px solid lightgrey;
 }
 
 .display-table{

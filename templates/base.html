@@ -3,7 +3,7 @@
     {% load staticfiles %}
     
 <head>
-    <title>Art By EssieO  - {% block title %}{% endblock %}</title>
+    <title>Art By Essie O  - {% block title %}{% endblock %}</title>
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
         crossorigin="anonymous">
@@ -13,31 +13,39 @@
         crossorigin="anonymous">
     <link rel="stylesheet" href="{% static 'css/lightbox.min.css' %}">
     <link rel="stylesheet" href="{% static 'css/base.css' %}">
-    <link href="https://fonts.googleapis.com/css?family=Alegreya+Sans|Ubuntu" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Original+Surfer|Ubuntu" rel="stylesheet">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 
 <body class="">
     <div id="sidebar" class="col-md-2 col-sm-3 text-center">
-        <div id='page-header' class="text-left">
-                <a href="/"><h1>Art By<br>EssieO</h1></a>
+        <div id='page-header' class="text-center">
+                <a href="/">
+                    <div id='brand'>
+                        <h1 id='art-brand'><strong>ART</strong></h1>
+                        <h2>by</h2>
+                        <h1><strong>ESSIE O</strong></h1>
+                    </div>
+                </a>
         </div>
-        <hr class='sidebar-divider'>
-        <div id="navbar" class='text-left'>
-            <ul>
-                <li>
-                    <a class="{% block artActive %} {% endblock %}" href="{% url 'art' %}"><h3>Home</h3></a>
-                </li>
-                <li>
-                    <a class="{% block aboutActive %} {% endblock %}" href="{% url 'about' %}"><h3>About</h3></a>
-                </li>
-                <li>
-                    <a class="{% block eventActive %} {% endblock %}" href="{% url 'events' %}"><h3>Events</h3></a>
-                </li>
-                <li>
-                    <a class="{% block contactActive %} {% endblock %}" href="{% url 'contact' %}"><h3>Contact</h3></a>
-                </li>
-            </ul>
+        <div id='sidebar-content'>
+            <hr class='sidebar-divider'>
+            <div id="navbar" class='text-left'>
+                <ul>
+                    <li>
+                        <a class="{% block artActive %} {% endblock %}" href="{% url 'art' %}"><h3>Home</h3></a>
+                    </li>
+                    <li>
+                        <a class="{% block aboutActive %} {% endblock %}" href="{% url 'about' %}"><h3>About</h3></a>
+                    </li>
+                    <li>
+                        <a class="{% block eventActive %} {% endblock %}" href="{% url 'events' %}"><h3>Events</h3></a>
+                    </li>
+                    <li>
+                        <a class="{% block contactActive %} {% endblock %}" href="{% url 'contact' %}"><h3>Contact</h3></a>
+                    </li>
+                </ul>
+            </div>
         </div>
     </div>
     <nav id="mobilebar" class="navbar navbar-default navbar-fixed-top clearfix">
@@ -51,7 +59,7 @@
                     <span class="icon-bar"></span>
                 </button>
             <!-- Brand and toggle get grouped for better mobile display -->
-                <a class="navbar-brand" href="/">Art By EssieO</a>
+                <a class="navbar-brand" href="/">Art By Essie O</a>
             </div>
 
             <!-- Collect the nav links, forms, and other content for toggling -->

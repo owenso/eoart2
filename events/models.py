@@ -24,6 +24,8 @@ class CurrentShow(models.Model):
 class PreviousVenue(models.Model):
     # created_by = models.ForeignKey('auth.User')
     venue_name = models.CharField(max_length=255, unique=True)
+    city = models.CharField(max_length=255)
+    state = models.CharField(max_length=2)
     created_date = models.DateTimeField(auto_now_add=True)
     
     class Meta(object):
