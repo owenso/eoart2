@@ -23,7 +23,7 @@
     <div>
         <h4>Watercolors</h4>
         {% for watercolor in watercolors %}
-        <a href="{{watercolor.image.url}}" data-lightbox="watercolors" data-title="{{watercolor.name}}">
+        <a href="{{watercolor.image.url}}" data-lightbox="watercolors" data-title="<p>{{watercolor.name}} {{watercolor.size}}</p><p>{{watercolor.description}}</p>">
             <img src="{{watercolor.image.url}}" class="img-thumbnail art-thumbnail" alt="">
         </a>
         {% endfor %}
@@ -33,7 +33,7 @@
     <div>
         <h4>Photography</h4>
         {% for photo in photos %}
-        <a href="{{photo.image.url}}" data-lightbox="photos" data-title="{{photo.name}}">
+        <a href="{{photo.image.url}}" data-lightbox="photos" data-title="<p>{{photo.name}} {{photo.size}}</p><p>{{photo.description}}</p>">
             <img src="{{photo.image.url}}" class="img-thumbnail art-thumbnail" alt="">
         </a>
         {% endfor %}
