@@ -34,7 +34,8 @@ ALLOWED_HOSTS = [
     '172.21.0.3',
     '45.32.223.136',
     'artbyessieo.nanoapp.io',
-    'artbyessieo.com'
+    'artbyessieo.com',
+    'www.artbyessieo.com'
 ]
 
 
