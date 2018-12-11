@@ -1,4 +1,4 @@
-Django==1.11.7
+Django==1.11.15
 django-admin-sortable2==0.6.17
 django-email-obfuscator==0.1.5
 django-sendgrid-v5==0.6.85
