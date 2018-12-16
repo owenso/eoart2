@@ -31,6 +31,8 @@
                                 {{ currentShow.start_date|default:""}} {{currentShow.start_time|default:""}} to {{currentShow.end_date|default:""}} {{currentShow.end_time|default:""}}
                             {% else % }
                                 {{ currentShow.start_date|default:""}} {{currentShow.start_time|default:""}}
+                            {% endif %}
+
                             </p>
                             <p>{{ currentShow.address }}</p>
             
