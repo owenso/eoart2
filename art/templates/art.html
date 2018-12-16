@@ -9,22 +9,22 @@
 </head>
 
 <body>
-    {% block pagecontent %} {% if acrylics %}
+    {% block pagecontent %} {% if watercolors %}
+        <div>
+        <h4>Watercolors</h4>
+        {% for watercolor in watercolors %}
+        <a href="{{watercolor.image.url}}" data-lightbox="watercolors" data-title="<p>{{watercolor.name}} {{watercolor.size}}</p><p>{{watercolor.description}}</p>">
+            <img src="{{watercolor.image.url}}" class="img-thumbnail art-thumbnail" alt="">
+        </a>
+        {% endfor %}
+    </div>
+    {% endif %} {% if acrylics %}
+    <br />
     <div>
         <h4>Acrylics</h4>
         {% for acrylic in acrylics %}
         <a href="{{acrylic.image.url}}" data-lightbox="acrylics" data-title="<p>{{acrylic.name}} {{acrylic.size}}</p> <p>{{acrylic.description}}</p>">
             <img src="{{acrylic.image.url}}" class="img-thumbnail art-thumbnail" alt="">
-        </a>
-        {% endfor %}
-    </div>
-    {% endif %} {% if watercolors %}
-    <br />
-    <div>
-        <h4>Watercolors</h4>
-        {% for watercolor in watercolors %}
-        <a href="{{watercolor.image.url}}" data-lightbox="watercolors" data-title="<p>{{watercolor.name}} {{watercolor.size}}</p><p>{{watercolor.description}}</p>">
-            <img src="{{watercolor.image.url}}" class="img-thumbnail art-thumbnail" alt="">
         </a>
         {% endfor %}
     </div>
