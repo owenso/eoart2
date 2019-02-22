@@ -6,11 +6,12 @@
 <head>
     <meta charset="UTF-8">
     <title>{% block title %}Artwork{% endblock %}</title>
-    <small>Click on the images for more information.</small>
 </head>
 
 <body>
-    {% block pagecontent %} {% if watercolors %}
+    {% block pagecontent %} 
+        <small>Click on the images for more information.</small>
+    {% if watercolors %}
         <div>
         <h4>Watercolors</h4>
         {% for watercolor in watercolors %}
@@ -39,5 +40,6 @@
         </a>
         {% endfor %}
     </div>
-    {% endif %} {% endblock %}
+    {% endif %} 
+    {% endblock %}
 </body>
