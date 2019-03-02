@@ -10,35 +10,47 @@
 
 <body>
     {% block pagecontent %} 
-        <small>Click on the images for more information.</small>
+        <small style="float:right">Click on the images for more information.</small>
     {% if watercolors %}
-        <div>
+    <div>
         <h4>Watercolors</h4>
-        {% for watercolor in watercolors %}
-        <a href="{{watercolor.image.url}}" data-lightbox="watercolors" data-title="<p>{{watercolor.name}} {{watercolor.size}}</p><p>{{watercolor.description}}</p>">
-            <img src="{{watercolor.image.url}}" class="img-thumbnail art-thumbnail" alt="">
-        </a>
-        {% endfor %}
+        <div class="art-images-section">
+            {% for watercolor in watercolors %}
+            <div class="art-images">
+                <a href="{{watercolor.image.url}}" data-lightbox="watercolors" data-title="<p>{{watercolor.name}} {{watercolor.size}}</p><p>{{watercolor.description}}</p>">
+                    <img src="{{watercolor.image.url}}" class="img-thumbnail art-thumbnail" alt="">
+                </a>
+            </div>
+            {% endfor %}
+        </div>
     </div>
     {% endif %} {% if acrylics %}
     <br />
     <div>
         <h4>Acrylics</h4>
-        {% for acrylic in acrylics %}
-        <a href="{{acrylic.image.url}}" data-lightbox="acrylics" data-title="<p>{{acrylic.name}} {{acrylic.size}}</p> <p>{{acrylic.description}}</p>">
-            <img src="{{acrylic.image.url}}" class="img-thumbnail art-thumbnail" alt="">
-        </a>
-        {% endfor %}
+        <div class="art-images-section">
+            {% for acrylic in acrylics %}
+            <div class="art-images">
+                <a href="{{acrylic.image.url}}" data-lightbox="acrylics" data-title="<p>{{acrylic.name}} {{acrylic.size}}</p> <p>{{acrylic.description}}</p>">
+                    <img src="{{acrylic.image.url}}" class="img-thumbnail art-thumbnail" alt="">
+                </a>
+            </div>
+            {% endfor %}
+        </div>
     </div>
     {% endif %} {% if photos %}
     <br />
     <div>
         <h4>Photography</h4>
-        {% for photo in photos %}
-        <a href="{{photo.image.url}}" data-lightbox="photos" data-title="<p>{{photo.name}} {{photo.size}}</p><p>{{photo.description}}</p>">
-            <img src="{{photo.image.url}}" class="img-thumbnail art-thumbnail" alt="">
-        </a>
-        {% endfor %}
+        <div class="art-images-section">
+            {% for photo in photos %}
+            <div class="art-images">
+                <a href="{{photo.image.url}}" data-lightbox="photos" data-title="<p>{{photo.name}} {{photo.size}}</p><p>{{photo.description}}</p>">
+                    <img src="{{photo.image.url}}" class="img-thumbnail art-thumbnail" alt="">
+                </a>
+            </div>
+            {% endfor %}
+        </div>
     </div>
     {% endif %} 
     {% endblock %}
