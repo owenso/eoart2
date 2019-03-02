@@ -29,6 +29,7 @@ print('Debug Enabled for DEV Environment.') if os.environ["APP_NAME"] == "dev" e
 ALLOWED_HOSTS = [
     'django.local',
     'django.test',
+    'essieo.local',
     'localhost',
     '172.21.0.2',
     '172.21.0.3',
