@@ -161,18 +161,14 @@ p{
 }
 
 .art-images{
-    flex-shrink:1;
-    max-width: 25%;
+    /* flex-shrink:1; */
+    /* max-width: 25%; */
+    height:300px;
 
 }
 
 .art-thumbnail {
-    /* flex-grow:1; */
-        /* flex-shrink:1;
-        max-width: 25%; */
-    /* height: 250px;
-
-    width: auto; */
+    height:300px;
 }
 
 /* CONTACT */
@@ -273,10 +269,10 @@ p{
         height: auto;
     }
 
-    /* .art-thumbnail { */
-        /* height: 150px;
-        width: auto; */
-    /* } */
+    .art-thumbnail {
+        height: 150px;
+        width: auto;
+     }
     body {
         padding-top: 50px;
     }
